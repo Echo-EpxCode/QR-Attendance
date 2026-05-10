@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'attendance_system';
+$dbname = 'Qr_Code';
 $username = 'root';
 $password = '';
 
@@ -29,7 +29,8 @@ try {
             INDEX idx_qr_token (qr_token),
             INDEX idx_student_id (student_id),
             INDEX idx_status (status)
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
     ";
 
     $pdo->exec($createTableSQL);
@@ -45,6 +46,6 @@ try {
     }
 } catch (PDOException $e) {
     // Show friendly error for development
-    die("❌ Database connection failed: " . $e->getMessage() . "<br>
-        💡 Make sure MySQL is running and credentials are correct in config.php");
+    die("Database connection failed: " . $e->getMessage() . "<br>
+     Make sure MySQL is running and credentials are correct in config.php");
 }
